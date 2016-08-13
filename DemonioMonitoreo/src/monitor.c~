@@ -10,6 +10,7 @@
  #include <sys/statvfs.h>
 #include "monitor.h"
 
+/*initial configuration to read CPU usage*/
 void init(){
     FILE* file = fopen("/proc/stat", "r");
     fscanf(file, "cpu %llu %llu %llu %llu", &lastTotalUser, &lastTotalUserLow,
@@ -17,6 +18,7 @@ void init(){
     fclose(file);
 }
 
+/*get CPU current value*/
 double getCurrentValue(){
     double percent;
     FILE* file;
@@ -49,7 +51,7 @@ double getCurrentValue(){
     return percent;
 }
 
-
+/*calculate the memory ram that is being use*/
 void isMemoryRangeAccepted(int threshold,char *logFile)
 {
 
@@ -80,7 +82,7 @@ void isMemoryRangeAccepted(int threshold,char *logFile)
 }
 
 
-
+/*calculate actual CPU usage*/
 void isCPURangeAccepted(int threshold,char *logFile){
 	FILE *f = fopen(logFile, "a");
 	if (f == NULL)
@@ -96,6 +98,7 @@ void isCPURangeAccepted(int threshold,char *logFile){
 }
 }
 
+/*Calculate a file system % */
 void isSystemFileRangeAccepted(int threshold, const char *path,char *logFile){
 	FILE *f = fopen(logFile, "a");
 		if (f == NULL)
@@ -122,8 +125,9 @@ void isSystemFileRangeAccepted(int threshold, const char *path,char *logFile){
 
 }
 
+/*Log and error if the configFile is bad*/
 void errorOpeningConfigFile(char *logFile){
-	FILE *f = fopen("/home/edward/Operativos/TareaCorta1/Git/OperativosTareaCorta1/EjemploDemonio/trackermon.log", "a");
+	FILE *f = fopen(logfile, "a");
 		if (f == NULL)
 		{
 		    printf("Error opening file!\n");

@@ -39,7 +39,6 @@ static void skeleton_daemon()
         exit(EXIT_FAILURE);
 
     /* Catch, ignore and handle signals */
-    //TODO: Implement a working signal handler */
     signal(SIGCHLD, SIG_IGN);
     signal(SIGHUP, SIG_IGN);
 
@@ -69,7 +68,7 @@ static void skeleton_daemon()
     }
 
     /* Open the log file */
-    openlog ("firstdaemon", LOG_PID, LOG_DAEMON);
+    openlog ("Trackermoon", LOG_PID, LOG_DAEMON);
 }
 
 

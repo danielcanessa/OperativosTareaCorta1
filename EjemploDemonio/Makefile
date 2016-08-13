@@ -1,9 +1,10 @@
-
+CC = gcc
+ouput = deamon
 
 main:
-		gcc -o helloDemon helloDemon.c readFile.c monitor.c
+		$(CC) -o $(ouput) helloDemon.c readFile.c monitor.c
 
 clean:
-		rm helloDemon
+		rm $(ouput)
 
 

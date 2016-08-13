@@ -81,9 +81,27 @@ int main()
 
     while (1)
     {
-		isMemoryRangeAccepted(30);
-        isCPURangeAccepted(2);    
-        isSystemFileRangeAccepted(0,"/");
+        //ask paramethers for the configFile
+        struct ConfigFile configFile = getConfigFileInfo();
+
+        //makes sure the config file was set up
+        if(configFile.status==-1){
+            errorOpeningConfigFile();
+        }
+        //config file is ok
+        else{
+            //checks for memory status
+            isMemoryRangeAccepted(configFile.MemthresholdResult);
+            //cheks for CPU status
+            isCPURangeAccepted(configFile.CPUthresholdResult);   
+            //cheks for all folders in the config file
+            int i;
+            for (i = 0; i < configFile.index; i++) 
+            {
+                isSystemFileRangeAccepted(configFile.FileSystemValueResult[i],configFile.FileSystemDataResult[i]);
+            }
+           
+        }
         break;
     }
 

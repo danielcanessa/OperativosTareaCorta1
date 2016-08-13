@@ -120,4 +120,16 @@ void isSystemFileRangeAccepted(int threshold, const char *path){
 		fprintf(f,"[CRITICAL] – File system %s Usage is currently %d which is over %d\r\n",path,porcent,threshold);
 	}
 	fclose(f);
+
 }
+
+void errorOpeningConfigFile(){
+	FILE *f = fopen("/home/edward/Operativos/TareaCorta1/Git/OperativosTareaCorta1/EjemploDemonio/trackermon.log", "a");
+		if (f == NULL)
+		{
+		    printf("Error opening file!\n");
+		    exit(1);
+		}
+	fprintf(f, "[ERROR] An error ocurrer while opening the config file");
+}
+

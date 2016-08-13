@@ -7,6 +7,6 @@ static unsigned long long lastTotalUser, lastTotalUserLow, lastTotalSys, lastTot
 void isMemoryRangeAccepted(int threshold);
 void isCPURangeAccepted(int threshold);
 void isSystemFileRangeAccepted(int threshold, const char *path);
-
+void errorOpeningConfigFile();
 
 #endif // readFile_H_

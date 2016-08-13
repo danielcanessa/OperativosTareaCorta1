@@ -1,0 +1,19 @@
+sudo su
+systemctl daemon-reload
+systemctl start Trackermon
+systemctl stop Trackermon
+systemctl restart Trackermon
+
+cd /var/log
+sudo rm -f trackermon.log 
+
+cd /etc/systemd/system
+sudo gedit Trackermon.service
+
+cd /etc/systemd/system
+sudo rm -f Trackermon.service
+sudo cp -i ~/Desktop/Operativos/OperativosTareaCorta1/Trackermon.service /etc/systemd/system
+
+cd /usr/bin$ 
+sudo rm -f TrackerMon
+sudo cp -i ~/Desktop/Operativos/OperativosTareaCorta1/DemonioMonitoreo/bin/TrackerMon  /usr/bin

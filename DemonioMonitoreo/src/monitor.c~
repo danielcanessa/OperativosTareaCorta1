@@ -127,7 +127,7 @@ void isSystemFileRangeAccepted(int threshold, const char *path,char *logFile){
 
 /*Log and error if the configFile is bad*/
 void errorOpeningConfigFile(char *logFile){
-	FILE *f = fopen(logfile, "a");
+	FILE *f = fopen(logFile, "a");
 		if (f == NULL)
 		{
 		    printf("Error opening file!\n");

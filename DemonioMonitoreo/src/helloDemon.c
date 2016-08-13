@@ -76,12 +76,19 @@ static void skeleton_daemon()
 
 int main()
 {
-    skeleton_daemon();
-
+    //skeleton_daemon();
+   // int counter=0;
+	
     while (1)
     {
         //ask paramethers for the configFile
         struct ConfigFile configFile = getConfigFileInfo();
+		
+		//printf("Aqui ando: %d \n",counter);
+		
+		FILE *f = fopen(configFile.LogFileResult, "a");
+		
+		//fprintf(f, "Inspect: %d! \r\n",counter);
 
         //makes sure the config file was set up
         if(configFile.status==-1){
@@ -101,7 +108,10 @@ int main()
             }
            
         }
-        break;
+        sleep(5);
+        
+        //counter++;
+       // break;
     }
 
     syslog (LOG_NOTICE, "DONE");

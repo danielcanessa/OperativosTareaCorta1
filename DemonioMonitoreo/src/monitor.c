@@ -20,6 +20,7 @@ void init(){
 
 /*get CPU current value*/
 double getCurrentValue(){
+	
     double percent;
     FILE* file;
     unsigned long long totalUser, totalUserLow, totalSys, totalIdle, total;
@@ -54,6 +55,7 @@ double getCurrentValue(){
 /*calculate the memory ram that is being use*/
 void isMemoryRangeAccepted(int threshold,char *logFile)
 {
+	
 
 	FILE *f = fopen(logFile, "a");
 		if (f == NULL)
@@ -61,7 +63,10 @@ void isMemoryRangeAccepted(int threshold,char *logFile)
 		    printf("Error opening file!\n");
 		}
 	else{
+	//fprintf(f, "Verifing memory! \r\n");
+
 	sysinfo (&memInfo);
+
 	long long totalVirtualMem = memInfo.totalram;
 
 	//Add other values in next statement to avoid int overflow on right hand side...
@@ -90,6 +95,7 @@ void isCPURangeAccepted(int threshold,char *logFile){
 	    printf("Error opening file!\n");
 	}
 	else{
+		//fprintf(f, "Verifing cpu! \r\n");
 		double CPUusage= getCurrentValue();
 		if(threshold < CPUusage){
 			fprintf(f, "[CRITICAL] – CPU Usage is currently %f which is over %d\r\n", CPUusage, threshold);

@@ -1,7 +1,9 @@
-$CC = gcc
+
 
 main:
-		$CC -o helloDemon helloDemon.c
+		gcc -o helloDemon helloDemon.c readFile.c
 
 clean:
 		rm helloDemon
+
+gcc -o my_app main.c foo.c

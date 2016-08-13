@@ -13,6 +13,8 @@
 #include <syslog.h>
 #include <sys/types.h>
 #include <sys/sysinfo.h>
+#include "readFile.h"
+
 
 struct sysinfo memInfo;
 static unsigned long long lastTotalUser, lastTotalUserLow, lastTotalSys, lastTotalIdle;
@@ -165,7 +167,7 @@ static void isCPURangeAccepted(int threshold){
 
 int main()
 {
-    skeleton_daemon();
+   /* skeleton_daemon();
 
     while (1)
     {
@@ -181,5 +183,17 @@ int main()
     syslog (LOG_NOTICE, "DONE");
     closelog();
 
-    return EXIT_SUCCESS;
+    return EXIT_SUCCESS;*/
+    
+    struct ConfigFile configFile = getConfigFileInfo();
+
+	printf("Results:\n LogFileResult: %s \n CPUthresholdResult: %d \n MemthresholdResult: %d \n Cantidad de FileSystem: %d \n",configFile.LogFileResult,configFile.CPUthresholdResult,configFile.MemthresholdResult,configFile.index);
+	
+	int i;
+	for (i = 0; i < configFile.index; i++) 
+	{
+		printf(" FileSystem: %s Threshold: %d \n",configFile.FileSystemDataResult[i],configFile.FileSystemValueResult[i]);
+	}
+
+	return 0;
 }

@@ -1,9 +1,3 @@
-/*
- * daemonize.c
- * This example daemonizes a process, writes a few log messages,
- * sleeps 20 seconds and terminates afterwards.
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -13,7 +7,7 @@
 #include <syslog.h>
 #include <sys/types.h>
 #include <sys/sysinfo.h>
- #include <sys/statvfs.h>
+#include <sys/statvfs.h>
 #include "readFile.h"
 #include "monitor.h"
 
@@ -39,8 +33,8 @@ static void skeleton_daemon()
         exit(EXIT_FAILURE);
 
     /* Catch, ignore and handle signals */
-    signal(SIGCHLD, SIG_IGN);
-    signal(SIGHUP, SIG_IGN);
+    signal(SIGCHLD, SIG_IGN);           //Ignore ssignal of the father parent
+    signal(SIGHUP, SIG_IGN);            //Ignore signal of the close terminal
 
     /* Fork off for the second time*/
     pid = fork();
@@ -84,12 +78,9 @@ int main()
         //ask paramethers for the configFile
         struct ConfigFile configFile = getConfigFileInfo();
 		
-		//printf("Aqui ando: %d \n",counter);
-		
+		//establece el archivo de lectura de configuracion
 		FILE *f = fopen(configFile.LogFileResult, "a");
 		
-		//fprintf(f, "Inspect: %d! \r\n",counter);
-
         //makes sure the config file was set up
         if(configFile.status==-1){
             errorOpeningConfigFile(configFile.LogFileResult);
@@ -110,10 +101,9 @@ int main()
         }
         sleep(10);
         
-        //counter++;
-       // break;
     }
 
+    //In case daemon finish
     syslog (LOG_NOTICE, "DONE");
     closelog();
 

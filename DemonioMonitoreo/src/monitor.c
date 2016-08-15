@@ -25,11 +25,13 @@ double getCurrentValue(){
     FILE* file;
     unsigned long long totalUser, totalUserLow, totalSys, totalIdle, total;
 
+    //read all information for CPU
     file = fopen("/proc/stat", "r");
     fscanf(file, "cpu %llu %llu %llu %llu", &totalUser, &totalUserLow,
         &totalSys, &totalIdle);
     fclose(file);
 
+    //calculate of the current avg CPU
     if (totalUser < lastTotalUser || totalUserLow < lastTotalUserLow ||
         totalSys < lastTotalSys || totalIdle < lastTotalIdle){
         //Overflow detection. Just skip this value.
@@ -58,13 +60,12 @@ void isMemoryRangeAccepted(int threshold,char *logFile)
 	
 
 	FILE *f = fopen(logFile, "a");
-		if (f == NULL)
-		{
-		    printf("Error opening file!\n");
-		}
-	else{
-	//fprintf(f, "Verifing memory! \r\n");
-
+	if (f == NULL)
+	{
+	    printf("Error opening file!\n");
+	}
+	else
+	{
 	sysinfo (&memInfo);
 
 	long long totalVirtualMem = memInfo.totalram;
@@ -80,10 +81,12 @@ void isMemoryRangeAccepted(int threshold,char *logFile)
 	
 	double virtualMenAVGD = (virtualMemUsed*100)/totalVirtualMem;
 	
-	if(threshold < virtualMenAVGD){
-		fprintf(f, "[CRITICAL] – Memory Usage is currently %f which is over %d\r\n", virtualMenAVGD, threshold);
+		if(threshold < virtualMenAVGD)
+		{
+			fprintf(f, "[CRITICAL] – Memory Usage is currently %f which is over %d\r\n", virtualMenAVGD, threshold);
+		}
+	fclose(f);
 	}
-	fclose(f);}
 }
 
 
@@ -95,7 +98,6 @@ void isCPURangeAccepted(int threshold,char *logFile){
 	    printf("Error opening file!\n");
 	}
 	else{
-		//fprintf(f, "Verifing cpu! \r\n");
 		double CPUusage= getCurrentValue();
 		if(threshold < CPUusage){
 			fprintf(f, "[CRITICAL] – CPU Usage is currently %f which is over %d\r\n", CPUusage, threshold);
@@ -113,6 +115,7 @@ void isSystemFileRangeAccepted(int threshold, const char *path,char *logFile){
 		}
 		else{
 		struct statvfs vfs;
+		//ask for file system information
 		statvfs(path, &vfs);
 
 

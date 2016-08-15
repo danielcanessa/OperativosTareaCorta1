@@ -3,6 +3,7 @@ systemctl daemon-reload
 systemctl start Trackermon
 systemctl stop Trackermon
 systemctl restart Trackermon
+systemctl status Trackermon
 
 cd /var/log
 sudo rm -f trackermon.log 

@@ -1,0 +1,5 @@
+
+Main:
+		src && make
+		@echo 'Deamon has been compile'
+

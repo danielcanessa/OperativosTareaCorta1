@@ -39,7 +39,6 @@ static void skeleton_daemon()
         exit(EXIT_FAILURE);
 
     /* Catch, ignore and handle signals */
-    //TODO: Implement a working signal handler */
     signal(SIGCHLD, SIG_IGN);
     signal(SIGHUP, SIG_IGN);
 
@@ -69,7 +68,7 @@ static void skeleton_daemon()
     }
 
     /* Open the log file */
-    openlog ("firstdaemon", LOG_PID, LOG_DAEMON);
+    openlog ("Trackermoon", LOG_PID, LOG_DAEMON);
 }
 
 
@@ -78,11 +77,18 @@ static void skeleton_daemon()
 int main()
 {
     skeleton_daemon();
-
+   // int counter=0;
+	
     while (1)
     {
         //ask paramethers for the configFile
         struct ConfigFile configFile = getConfigFileInfo();
+		
+		//printf("Aqui ando: %d \n",counter);
+		
+		FILE *f = fopen(configFile.LogFileResult, "a");
+		
+		//fprintf(f, "Inspect: %d! \r\n",counter);
 
         //makes sure the config file was set up
         if(configFile.status==-1){
@@ -102,7 +108,10 @@ int main()
             }
            
         }
-        break;
+        sleep(10);
+        
+        //counter++;
+       // break;
     }
 
     syslog (LOG_NOTICE, "DONE");

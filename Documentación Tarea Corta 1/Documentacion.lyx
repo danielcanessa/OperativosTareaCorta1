@@ -1,0 +1,1822 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "lmodern" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize letterpaper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+\color black
+Área Académica de Ingeniería en Computadores 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+\color black
+Programa de Licenciatura en Ingeniería en Computadores 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+\color black
+Curso: CE-4303 - Principios de Sistemas Operativos 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename Imagenes/logoTEC.JPG
+	scale 50
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+\color black
+Evaluación: Tarea Corta 1 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+\color black
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+\color black
+Realizado por: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Daniel Canessa Valverde, 201137483
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Felipe Mejías Loría, 201231682 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Edward Umaña Williams, 201128403
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+\color black
+Profesora: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Jennifer Vargas 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\size larger
+\color black
+Fecha: 16 de agosto de 2016
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+\color black
+1 Introducción
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size large
+\color black
+1.1 Demonios en Linux
+\end_layout
+
+\begin_layout Standard
+Un demonio es un tipo de programa de Unix que se ejecuta de manera constante
+ sin que el usuario se de cuenta.
+ Muchos de estos demonios se ejecutan constantemente esperando algún evento
+ significativo.
+ Otros demonios se ejecutan de manera periódica y concluyen al ejecutar
+ su tarea.
+ Por ejemplos el uucp, utilidad de transferencia de archivos.
+ [1]
+\end_layout
+
+\begin_layout Standard
+Los demonios son normalmente inicializados como un proceso.
+ Un proceso es una instancia existente de un programa, la cual es administrada
+ por el kernel a la que se le asigna un identificador de proceso.
+ Existen tres tipos de procesos en linux: interactivos, batch y demonios.
+ [2]
+\end_layout
+
+\begin_layout Standard
+Los interactivos se ejecutan a nivel de usuario mediante línea de comandos
+ y los bash se agregan a una cola de comandos que no está asociada a la
+ línea de comandos utilizada.
+ Por su parte los demonios son reconocidos por el sistema como un proceso
+ normal, aunque no esté en contacto con el usuario y normalmente se inician
+ con el boot del sistema
+\end_layout
+
+\begin_layout Standard
+Los demonios son muy sencillos de programar en el ambiente the UNIX.
+ Pueden ser escritos por cualquier usuario y lanzado periódicamente mediante
+ la línea de comandos, o System V.
+ 
+\end_layout
+
+\begin_layout Standard
+Para crear un demonio se deben seguir lo siguientes pasos: [3]
+\end_layout
+
+\begin_layout Enumerate
+fork() para que el proceso padre pueda salir, así la devuelve control a
+ la línea de comandos que llamó al programa.
+\end_layout
+
+\begin_layout Enumerate
+setsid() para hacerse una sesión y una sesión de grupo lider de manera tal
+ que el proceso no tenga una terminal controlada.
+\end_layout
+
+\begin_layout Enumerate
+fork() de nuevo para que el padre (la sesión del grupo líder) pueda salirse.
+ Esto significa que estamos en una sesión sin grupo leader, por lo que no
+ puede controlar de nuevo una terminal.
+ 
+\end_layout
+
+\begin_layout Enumerate
+chdir(“/”) para asegurarse que nuestro proceso no retenga ningún directorio
+ en uso.
+ 
+\end_layout
+
+\begin_layout Enumerate
+unmask(0) para tener completo control the permisos sobre cualquier archivo
+ que escriba.
+ close() fds 0, 1 and 2.
+ Libera los estandar de entrada , salida y error heredados del proceso padre.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Establecer un archivo para registrar los eventos y errores del demonio 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los sistemas de Unix ejecutan una gran cantidad de demonios, principalmente
+ para responder a peticiones de servicios de computadores en la red, además
+ de responder a otros programas y actividades del hardware.
+ No es necesario que el responsable de ejecutar la acción del demonio este
+ conciente que el demonio está escuchando aunque algunos programas frecuentement
+e ejecutan acciones porque saben que un demonio está atento a esas señales.
+ [2]
+\end_layout
+
+\begin_layout Standard
+Dentro de los demonios más importante de Linux , y por lo tanto las funciones
+ más importantes de los mismo podemos encontrar init, el programa encargado
+ de lanzar todos los otros procesos, crond , el calendarizador de tareas
+ basado en tiempo o por ejemplo httpd que es un servidor web entre otros
+ como ntpd,sshd, syncd entre otras.
+ [4]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size large
+\color black
+1.2 SystemD y SysV
+\end_layout
+
+\begin_layout Subsection*
+System V
+\end_layout
+
+\begin_layout Standard
+System V fue una de las versiones del sistema operativo Unix.
+ System V es la fuente de varias características comunes de Unix, tales
+ como los "SysV init scripts", ubicados en /etc/init.d; usados para el control
+ de inicio y apagado del sistema.
+ El sistema de inicio System V controla el arranque de los programas en
+ el instante de inicio de la máquina.
+ Este sistema de inicio es considerado por muchos más fácil de usar, más
+ potente y flexible que el sistema de inicio BSD tradicional.
+ El proceso Init es un programa que el núcleo ejecuta cuando arranca el
+ sistema.
+ Se encarga de inicializar todos los procesos normales que se necesiten
+ ejecutar en el momento de arrancar; incluyendo los terminales que le permiten
+ acceder al sistema y cualquier proceso que quiera ejecutar cuando su máquina
+ arranque.
+ [5]
+\end_layout
+
+\begin_layout Subsection*
+¿Cómo funciona los métodos de System V?
+\end_layout
+
+\begin_layout Standard
+Con System V, la mayoría de las aplicaciones estándar que se pueden instalar
+ se iniciarán al iniciar el sistema por defecto, Cada una de estas aplicaciones
+ tiene sus propios scripts de inicio en /etc/init.d.
+ Para aplicaciones personalizadas, el usuario tiene que crear sus propios
+ scripts de inicio y habilitar los servicios para que se inicie automáticamente.
+ System V utiliza Bash para los scripts de inicio.
+ Para que un demonio se inicie o se detenga automáticamente cuando iniciamos
+ y apagamos el sistema respectivamente debemos asignar los runlevels.
+ El arranque de un sistema operativo UNIX tipo System V se puede dividir
+ en dos etapas principales: el arranque del núcleo del sistema operativo
+ y la inicialización que lleva acabo el programa "init".
+ Un nivel de ejecución representa el estado actual de un sistema Linux.
+ Cada nivel de ejecución indica qué servicios pueden estar en ejecución
+ en ese estado.
+ Algunos servicios pueden ejecutarse en uno o más niveles de ejecución,
+ pero no en otros niveles.
+ Los niveles de ejecución se denotan por un solo dígito y pueden tener un
+ valor entre 0 y 6.
+ La siguiente lista muestra cada uno de los niveles de ejecución: [5]
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 0: Apagado del sistema.
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 1: Único usuario, modo de rescate.
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 2: Multi-usuario, modo de texto con funciones de red
+ habilitadas.
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 3: Multi-usuario, modo de texto con funciones de red
+ habilitadas.
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 4: Multi-usuario, modo de texto con funciones de red
+ habilitadas.
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 5: Multi-usuario, red habilitada, en modo gráfico.
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 6: Reinicio del sistema.
+\end_layout
+
+\begin_layout Standard
+Los niveles de ejecución 2,3 y 4 varían dependiendo de la distribución.
+ En System V, el sistema operativo se iniciará con un nivel de ejecución
+ en particular; y, cuando se inicia, se tratará de iniciar todos los servicios
+ que están asociados con ese nivel de ejecución.
+ La secuencia de arranque de System V es:
+\end_layout
+
+\begin_layout Itemize
+El demonio init se crea a partir del archivo binario /sbin/init.
+\end_layout
+
+\begin_layout Itemize
+El primer archivo que el demonio init lee es /etc/inittab.
+\end_layout
+
+\begin_layout Itemize
+Una de las entradas de este archivo decide el nivel de ejecución en el cual
+ la máquina debe arrancar.
+\end_layout
+
+\begin_layout Itemize
+Luego el demonio init sigue leyendo en el archivo /etc/inittab y lee lo
+ que el script init necesita para funcionar en ese nivel de ejecución.
+\end_layout
+
+\begin_layout Standard
+Así, cuando el demonio init encuentra los init scripts que se necesitan
+ para funcionar en el nivel dado, es esencial averiguar cuáles son los servicios
+ que necesita poner en marcha.
+ Estos son los scripts de inicio donde se puede configurar el comportamiento
+ de inicio para los servicios personalizados.
+ [5]
+\end_layout
+
+\begin_layout Subsection*
+¿Cómo son implementados los métodos?
+\end_layout
+
+\begin_layout Standard
+Un script de inicio es lo que controla un servicio específico, como Trackermon,
+ en System V.
+ Los scripts de inicio para los servicios son proporcionados por el proveedor
+ de la aplicación o vienen con la distribución de Linux.
+ También podemos crear nuestros propios scripts de inicio para los servicios
+ personalizados, en este caso para el servicio Trackermon.
+ Cuando un proceso o servicio como Trackermon se inicia, su archivo de programa
+ binario tiene que cargarse en la memoria.
+ Dependiendo de cómo esté configurado el servicio, este programa puede tener
+ que seguir ejecutandose en segundo plano de forma continua.
+ La tarea de iniciar, detener o volver a cargar esta aplicación binaria
+ está a cargo de los scripts de inicio del servicio.
+ Se llama el script de inicio, ya que inicia el servicio.
+ El directorio /etc es el directorio padre para los scripts de inicio.
+ La ubicación real de los scripts de inicio está dentro de /etc/init.d.
+ Estos scripts son un enlace simbólico a los directorios rc.
+ Dentro del directorio /etc, hay una serie de directorios rc, cada uno con
+ un número en su nombre.
+ Los números representan diferentes niveles de ejecución.
+ Así que para implementar un servicio en System V, se debe crear un script
+ que contenga los métodos: start, stop, restart y status.
+ Éste script se debe colocar en la carpeta /etc/init.d, de esta forma se
+ podrá configurar como un servicio de Linux.
+ [5]
+\end_layout
+
+\begin_layout Subsection*
+Systemd
+\end_layout
+
+\begin_layout Standard
+Systemd es un marco completamente nuevo que abarca muchos componentes de
+ un sistema Linux moderno.
+ Una de sus funciones es la de trabajar como un sistema y gestor de servicios
+ para Linux.
+ En esta función, uno de las cosas que Systemd controla es como un servicio
+ debe comportarse si se bloquea o se reinicia el equipo.
+ Systemd es compatible con los comandos de System V y sus scripts de inicializac
+ión.
+ Eso significa que cualquier servicio de System V también se ejecutará en
+ systemd.
+ [5]
+\end_layout
+
+\begin_layout Subsection*
+¿Cómo funciona los métodos de Systemd?
+\end_layout
+
+\begin_layout Standard
+En systemd los servicios se denominan units.
+ Cada unit se define en un archivo donde se especifica un proceso para arrancar
+ por systemd.
+ La principal diferencia entre systemd y system v, es que systemd es responsable
+ de la inicialización, no sólo de los demonios de servicios, sino también
+ de otros tipos de recursos como las rutas del sistema operativo del dispositivo
+, puntos de montaje, enchufes, etc.
+ Un recurso puede ser cualquiera de estos.
+ Los archivos que definen los units se pueden encontrar básicamente en tres
+ ubicaciones distintas: [6]
+\end_layout
+
+\begin_layout Itemize
+/usr/lib/systemd/system/: unidades distribuidas con paquetes RPM instalados.
+\end_layout
+
+\begin_layout Itemize
+/run/systemd/system/: unidades creadas en tiempo de ejecución.
+ 
+\end_layout
+
+\begin_layout Itemize
+/etc/systemd/system/: unidades creadas y administradas por el administrador
+ del sistema.
+ 
+\end_layout
+
+\begin_layout Standard
+El formato de un archivo unit sigue un conjunto de reglas específicas.
+ El archivo se divide en las siguientes secciones:
+\end_layout
+
+\begin_layout Itemize
+Unit 
+\end_layout
+
+\begin_layout Itemize
+Service 
+\end_layout
+
+\begin_layout Itemize
+Install
+\end_layout
+
+\begin_layout Standard
+Dentro de cada una de estas secciones se pueden especificar los siguientes
+ parámetros.
+ [6]
+\end_layout
+
+\begin_layout Subsubsection*
+Sección Unit
+\end_layout
+
+\begin_layout Itemize
+Description=Se indica una descripción del servicio que se muestra al consultar
+ el status del servicio.
+\end_layout
+
+\begin_layout Itemize
+After= Se indica el orden en el cual los units se inician.
+ El unit se inicia sólo después de que los units especificados en esta línea
+ estén activos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Requires= Aquí se indica la dependencias sobre otros units.
+ Los units listados aquí serán activados junto con este unit.
+ Si alguno de los units requeridos falla en el arranque, este unit tampoco
+ se activa.
+\end_layout
+
+\begin_layout Itemize
+Wants= Activa los units indicados aquí.
+ Wants configura dependencias de manera más débil que Require.
+ Si alguno de los units indicados por Wants no se inician correctamente
+ no tienen ningún efecto en el estado de este unit.
+ Wants es la manera recomendada para establecer dependencias personalizadas.
+\end_layout
+
+\begin_layout Itemize
+Conflicts= Configura dependencias negativas, es decir, es un opuesto a Requires.
+ El servicio no se inicia si el servicio indicado en esta línea está activo.
+\end_layout
+
+\begin_layout Subsubsection*
+Sección Service
+\end_layout
+
+\begin_layout Itemize
+TimeoutStartSec= Tiempo tras el cuál, si el servicio no ha arrancado, se
+ considera fallo y se detiene.
+\end_layout
+
+\begin_layout Itemize
+ExecStart=comando a ejecutar.
+\end_layout
+
+\begin_layout Itemize
+Type=Configura el tipo de arranque del procesos de la unidad la cual afecta
+ a la funcionalidad ExecStart.
+ Las opciones son:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+simple: El proceso arrancado con ExecStart es el proceso principal del servicio.
+ Este proceso se arranca inmediatamente.
+ No utilizar este tipo si otros servicios necesitan ejecutarse en orden
+ con él.
+ 
+\end_layout
+
+\begin_layout Itemize
+forking: El proceso iniciado con ExecStart genera un proceso hijo que se
+ convierte en el proceso principal del servicio.
+ Se sale del proceso padre cuando el arranque se completa.
+ El uso de esta opción es importante cuando ejecutamos un script que a su
+ vez ejecuta otros procesos.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Sección Install
+\end_layout
+
+\begin_layout Itemize
+WantedBy=runlevel.target Indica el target al que pertenece este unit.
+ Lo que se consigue con esto es que el servicio se ejecute automáticamente
+ al arrancar el target especificado.
+\end_layout
+
+\begin_layout Standard
+Un conjunto de units definen un target.
+ En systemd, un target representa un runlevel.
+ La siguiente lista muestra los niveles de ejecución en systemd: [5]
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 0: poweroff.target
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 1: rescue.target
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 2: multi-user.target
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 3: multi-user.target
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 4: multi-user.target
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 5: graphical.target
+\end_layout
+
+\begin_layout Itemize
+Nivel de ejecución 6: reboot.target
+\end_layout
+
+\begin_layout Standard
+En Systemd la forma de controlar los servicios del sistema es diferente
+ a System V.
+ Los servicios ya no se controlan a través de /etc/init.d y tampoco se utiliza
+ el comando 
+\begin_inset Quotes eld
+\end_inset
+
+service”.
+ En Systemd se utiliza el gestor de servicios llamado systemctl.
+ La principal orden para controlar systemd es systemctl.
+ Systemctl sustituye a chkconfig de System V.
+ Para la gestión de servicios en Systemd se utilizan los siguientes comandos:
+ [6]
+\end_layout
+
+\begin_layout Itemize
+systemctl start <NombreServicio>.service: Se utiliza para iniciar el servicio.
+\end_layout
+
+\begin_layout Itemize
+systemctl stop <NombreServicio>.service: Se utiliza para parar el servicio.
+\end_layout
+
+\begin_layout Itemize
+systemctl status <NombreServicio>.service: Se utiliza para visualizar el
+ estado de ejecución de un servicio.
+\end_layout
+
+\begin_layout Itemize
+systemctl is-active <NombreServicio>.service: Se utiliza para ver si el servicio
+ está activo.
+ 
+\end_layout
+
+\begin_layout Itemize
+systemctl enable <NombreServicio>.service: Se utiliza para habilitar servicios
+ en el arranque.
+\end_layout
+
+\begin_layout Itemize
+systemctl disable <NombreServicio>.service: Se utiliza para deshabilitar
+ servicios en el arranque.
+\end_layout
+
+\begin_layout Itemize
+systemctl restart <NombreServicio>.service: Se utiliza para reiniciar un
+ servicio.
+\end_layout
+
+\begin_layout Subsection*
+¿Cómo son implementados los métodos?
+\end_layout
+
+\begin_layout Standard
+Para implementar un servicio en Systemd, lo que se tiene que hacer es lo
+ siguiente: Primero que todo, se debe crear un archivo.service, en el cual
+ se especifica el nivel de ejecución del servicio, la descripción del servicio
+ y el programa que debe ejecutar el servicio cuando éste se inicializa.
+ Luego de crear este archivo, se debe colocar en la carpeta /etc/systemd/system/
+, de esta forma ya se puede inicializar manualmente el servicio en la terminal.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size large
+\color black
+1.3 Especificación del programa
+\end_layout
+
+\begin_layout Standard
+Se debe crear un demonio en Linux y debe ser configurado como un servicio
+ utilizando un init script.
+ El servicio Trackermon se ocupará de vigilar los recursos importantes a
+ nivel del sistema operativo como memoria, CPU y archivos del sistema, y
+ anotar las alertas en el archivo log especificado.
+ Trackermon debe ser creado en C para Linux.
+ El programa debe cumplir con los siguientes requerimientos:
+\end_layout
+
+\begin_layout Enumerate
+El demonio Trackermon se va a encargar de:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Supervisar el uso del CPU y generar una alerta que se añadirá en el archivo
+ log cuando el umbral(threshold) del CPU es igual o mayor que lo que se
+ especifica en el archivo de configuración.
+\end_layout
+
+\begin_layout Enumerate
+Supervisar el uso de la memoria y generar una alerta que se añadirá en el
+ archivo log cuando el umbral(threshold) del uso de la memoria es igual
+ o mayor que lo que se especifica en el archivo de configuración.
+\end_layout
+
+\begin_layout Enumerate
+Supervisar los archivos del sistema y generar una alerta que se añadirá
+ en el archivo log cuando el umbral(threshold) de los archivos del sistema
+ es igual o mayor que lo que se especifica en el archivo de configuración.
+\end_layout
+
+\begin_layout Enumerate
+Leer el archivo de configuración para cargar los umbrales(thresholds) para
+ la supervisión de los recursos, la ubicación de este archivo de configuración
+ va a ser /etc/trackermon/config.conf.
+ Este archivo tiene que ser recargado en el sistema cada vez que el demonio
+ se inicia por primera vez o se reinicia.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Trackermon debe correr como un servicio de Linux.
+ Con la creación del init script, se van a implementar dos formas de iniciar
+ o parar el demonio:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Inicializar Trackermon en tiempo de arranque.
+\end_layout
+
+\begin_layout Enumerate
+Parar Trackermon cuando el sistema operativo se apague.
+\end_layout
+
+\begin_layout Enumerate
+Iniciar, parar, consultar el estado y reinicio de Trackermon: se puede hacer
+ desde la terminal como root.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\series bold
+\size larger
+\color black
+2 Ambiente de desarrollo
+\end_layout
+
+\begin_layout Itemize
+El software se desarrolló en el lenguaje de programación C, utilizando el
+ ambiente de desarrollo Geany versión 1.28.
+ 
+\end_layout
+
+\begin_layout Itemize
+El sistema operativo que se utilizó fue Linux y su distribucción Ubuntu
+ 15.04.
+ 
+\end_layout
+
+\begin_layout Itemize
+Para compilar el código se utiliza el compilador GCC, con la versión 6.1.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+\color black
+3 Estructuras de datos, funciones y librerias
+\end_layout
+
+\begin_layout Standard
+El desarrollo de la aplicación se dividió en 2 partes, el desarrollo del
+ demonio de monitoreo y la implementación del servicio.
+ El demonio cuenta con 2 archivos de código en C, que se incluyen en un
+ tercer archivo de código C que es el encargado de unirlos.
+ Es así como el demonio cuenta con un código dedicado a la lectura del archivo
+ config.conf (readFile), otro código dedicado al monitoreo (monitor) y otro
+ código que genera al demonio y une los dos códigos anteriores (TrackerMon).
+\end_layout
+
+\begin_layout Standard
+El archivo de código principal, TrackerMon, está compuesto de 2 funciones
+ skeleton_daemon y main, a continuación se explican con más detalle.
+\end_layout
+
+\begin_layout Itemize
+main: es la función principal de este código, cuando el código se ejecuta
+ está función es la primera en ejecutarse.
+ Esta función inicialmente hace una llamada a la función skeleton_daemon,
+ lo que demoniza el código, luego de esto se inicia un ciclo infinito que
+ tiene un delay de 10 segundos al finalizar cada iteración.
+ El while primero obtiene los datos del archivo config.conf utilizando el
+ código de readFile que se explica más adelante, readFile provee estos datos
+ por medio de una estructura.
+ Luego se procede a llamar a las funciones del monitor suministrandoles
+ los datos obtenidos de ReadFile, específicamente isMemoryRangeAccepted,
+ isCPURangeAccepted e isSystemFileRangeAccepted.
+\end_layout
+
+\begin_layout Itemize
+skeleton_daemon: este método se encarga de crear un demonio siguiendo los
+ pasos establecidos para este fin.
+ Iniciando con un fork() donde el proceso padre termina y el hijo ignora
+ las señales de finalización del proceso padre y de la terminal, mediante
+ los métodos signal(SIGCHLD, SIG_IGN) y signal(SIGHUP, SIG_IGN).
+ De nuevo se hace un fork() y deja que el padre termine.
+ Luego este tercer proceso hijo hace un umask(0) para obtener los permisos
+ correspondientes al proceso sobre archivos, luego se cambia el directorio
+ de trabajo utilizando chdir("/").
+ Y por último el mismo abre el archivo de log para confirmar el funcionamiento
+ del demonio.
+ 
+\end_layout
+
+\begin_layout Standard
+El código del archivo monitor.c es el encargado de realizar las verificaciones
+ de los recursos del sistema que fueron especificados en el archivo config.conf
+ , en caso de que se exceda el 
+\begin_inset Quotes eld
+\end_inset
+
+threshold
+\begin_inset Quotes erd
+\end_inset
+
+ de un recurso especificado en el archivo de configuración, el monitor escribe
+ en Trackermon.log un reporte de la situación, este archivo por defecto se
+ encuentra en /var/log/Trackermon.log, sin embargo esta ruta puede cambiar
+ en el archivo de configuración.
+ Las funciones del monitor se especifican a continuación.
+\end_layout
+
+\begin_layout Itemize
+isMemoryRangeAccepted: esta función calcula la cantidad de memoria Ram que
+ está en uso, en caso de superar el valor del 
+\begin_inset Quotes eld
+\end_inset
+
+threshold
+\begin_inset Quotes erd
+\end_inset
+
+ escribe en el archivo Trackermon.log un reporte.
+\end_layout
+
+\begin_layout Itemize
+isCPURangeAccepted: esta función calcula la cantidad de uso del CPU actualmente,
+ en caso de superar el valor del “threshold” escribe en el archivo Trackermon.log
+ un reporte.
+\end_layout
+
+\begin_layout Itemize
+isSystemFileRangeAccepted: esta función revisa el almacenamiento de cada
+ system file especificado en el archivo config.conf, en caso de superar el
+ valor del “threshold” de algún system file escribe en el archivo Trackermon.log
+ un reporte.
+\end_layout
+
+\begin_layout Standard
+El monitor utiliza varias bibliotecas, estas se especifican a continuación:
+\end_layout
+
+\begin_layout Itemize
+Unistd.h: es la biblioteca encargada de dar acceso al API de POXI.
+ De los cuales se utilizan métodos como fork() para crear procesos hijos
+ en la creación del demonio.
+ 
+\end_layout
+
+\begin_layout Itemize
+Signal.h: esta biblioteca permite el manejo de señales que se reportan durante
+ la ejecución del programa, de igual manera esta es importante para la generació
+n del demonio y es utilizada en las siguientes líneas de código como signal(SIGC
+HLD, SIG_IGN) donde se le indica al proceso que ignore la señal enviada
+ por su padre cuando este termine el proceso y signal(SIGHUP, SIG_IGN) que
+ le indica al proceso que ignore la señal de que la terminal donde fue ejecutado
+ ha sido cerrada.
+ 
+\end_layout
+
+\begin_layout Itemize
+sys/types.h y sys/stat: la librería sys/stat permite obtener información
+ sobre ficheros y en sys/types están definidos algunos tipos de datos utilizados
+ por la biblioteca anterior.
+ Estos son importantes para leer archivos y obtener datos del monitoreo
+ del CPU y memoria.
+\end_layout
+
+\begin_layout Itemize
+syslog.h: es la biblioteca utilizada para el registro de mensajes.
+ Utilizados en el proyecto para debug los mensajes de error de los procesos.
+ 
+\end_layout
+
+\begin_layout Itemize
+sys/sysinfo.h: esta biblioteca devuelve estadísticas respecto al uso de la
+ memoria y el uso de swap también como la carga promedio de la memoria y
+ otros datos.
+ Mediante el metodo int sysinfo(struct sysinfo *info) que almacenara todos
+ los datos en la estructura ingresada como parametro.
+\end_layout
+
+\begin_layout Itemize
+sys/statvfs.h: para calcular el uso de los archivos del sistema se utilizó
+ esta biblioteca que brinda datos sobre los archivos del sistema que permiten
+ el cálculo del uso actual de las carpetas del sistema.
+ Mediante el metodo statvfs(path, &vfs) donde los datos de la carpeta indicada
+ en el path seran guardados en el parametro vfs.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado código del archivo readFile.c tiene como función leer el archivo
+ de configuración config.conf que se encuentra ubicado en /etc/trackermon/config.c
+onf, este archivo contiene la especificación de lo que se debe monitorear
+ y los threshold de cada parámetro a monitorear.
+ En readFile.c se hace uso de una estructura de datos denominada configFile,
+ esta estructura consta de:
+\end_layout
+
+\begin_layout Itemize
+configFile.CPUthresholdResult: este dato es un int, contiene el threshold
+ especificado del CPU.
+\end_layout
+
+\begin_layout Itemize
+configFile.MemthresholdResult: este dato es un int, contiene el threshold
+ especificado de la memoria RAM.
+\end_layout
+
+\begin_layout Itemize
+configFile.LogFileResult: este dato es un arreglo de char, contiene la dirección
+ en la que se debe escribir el archivo .log.
+\end_layout
+
+\begin_layout Itemize
+configFile.FileSystemDataResult: este dato es un arreglo bidimensional de
+ char, contiene los nombres de los system file a monitorear.
+\end_layout
+
+\begin_layout Itemize
+configFile.FileSystemValueResult: este dato es un arreglo de int, contiene
+ los threshold de los system file.
+\end_layout
+
+\begin_layout Itemize
+configFile.index: este dato es un int, representa la cantidad de system file
+ especificados en el archivo de configuración.
+\end_layout
+
+\begin_layout Standard
+Las funciones de readFile.c se especifican a continuación:
+\end_layout
+
+\begin_layout Itemize
+findSubstr: esta función recibe un arreglo de char y verifica si este se
+ encuentra en otro arreglo de char, en caso de ser afirmativo retorna la
+ posición en la que se encuentra, en otro caso retorna -1.
+\end_layout
+
+\begin_layout Itemize
+getConfigFileInfo: esta función lee el archivo de configuración, extrae
+ los datos y los encapsula en una estructura del tipo configFile, esta estructur
+a es retornada.
+\end_layout
+
+\begin_layout Standard
+El servicio es el encargado de ejecutar el demonio automáticamente.
+ El servicio se encuentra ubicado en /etc/systemd/system/Trackermon.service.
+ Para que el servicio inicie en el run level 5, se especifica en el servicio
+ que este debe ejecutarse después de 
+\begin_inset Quotes eld
+\end_inset
+
+graphical.target
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Además en el se especifica que debe ejecutar ExecStart=/usr/bin/TrackerMon.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+\color black
+Diagrama UML
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Imagenes/Tarea1UML.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figura 1.
+ Diagrama UML del proyecto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+\color black
+Intrucciones de como usar el programa
+\end_layout
+
+\begin_layout Standard
+Para utilizar el programa Trackermon debe escribir los siguientes comandos
+ en la terminal de Linux, se recomienda tener privilegios de usuario administrad
+or, en otro caso sólo podra saber el estado de Trackermon.
+ 
+\end_layout
+
+\begin_layout Itemize
+sudo service Trackermon start - este comando se utiliza iniciar el servicio
+ Trackermon.
+\end_layout
+
+\begin_layout Itemize
+sudo service Trackermon stop - este comando se utiliza detener el servicio
+ Trackermon.
+\end_layout
+
+\begin_layout Itemize
+sudo service Trackermon restart - este comando se utiliza reiniciar el servicio
+ Trackermon.
+\end_layout
+
+\begin_layout Itemize
+service Trackermon status - este comando se utiliza para saber el estado
+ del servicio Trackermon.
+\end_layout
+
+\begin_layout Standard
+Recuerde que en todo momento puede revisar el archivo Trackermon.log donde
+ se encuentran todos los reportes del sistema Trackermon, para hacer esto
+ escriba en la terminal /var/log/trackermon.log, además puede modificar el
+ archivo config.conf para modificar los valores de los threshold y agregar
+ system files a monitorear, para realizar esta acción escriba en la terminal
+ sudo gedit /etc/trackermon/config.conf.
+\end_layout
+
+\begin_layout Section*
+Bitácora
+\end_layout
+
+\begin_layout Standard
+Bitácora de Daniel Canessa Valverde
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fecha
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Horas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Trabajo Realizado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12-8-2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Crear archivo .conf
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12-8-2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Leer archivos .conf en C y generar un struct
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13-8-2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Adecuar script de servicio a systemd y hacer que trabaje con el demonio
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14-8-2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Documentación
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bitácora de Felipe Alberto Mejías Loría
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fecha
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Horas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Trabajo Realizado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11-8-2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Investigación previa sobre demonios en Linux, systemd y systemv
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12-8-2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Investigación sobre la construcción de servicios con systemd y systemv
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13-8-2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Configuracion de Trackermon como servicio mediante systemd
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15-8-2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Documentación
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bitácora de Edward Umaña Williams
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fecha
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Horas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Labores Realizadas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10/08/2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Investigación sobre demonios y primer ejemplo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11/08/2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Investigación lecturas sobre CPU y memoria
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12/08/2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Demonio y mediciones de CPU y memoria
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13/08/2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unir lectura archivos, con monitoreo y demonio
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14/08/2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Documentación
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15/08/2016
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Documentación
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+\color black
+Estado final del proyecto
+\end_layout
+
+\begin_layout Standard
+El proyecto se ha finalizado de forma satisfactoria cumpliendo con todos
+ los requerimientos del cliente.
+\end_layout
+
+\begin_layout Standard
+El mayor problema que se presentó fue el de la unión del servicio con el
+ demonio, esto porque la distribución de linux que se utilizó es systemd
+ y se intentaba hacer que el sevicio se ejecutara como sys-v, corregido
+ este problema la creación del servicio se realizó sin contratiempos.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+\color black
+Conclusiones
+\end_layout
+
+\begin_layout Itemize
+El manejo de cadenas de texto en C no es trivial como en lenguajes de más
+ alto nivel, se debe tener claro si se desea hacer que esta sea dinámica
+ o no, en caso de que sea dinámica se debe liberar la memoria que se utilizó
+ para esta.
+\end_layout
+
+\begin_layout Itemize
+Los demonios son esenciales para realizar tareas en segundo planos que no
+ requieran interacción con el usuario.
+ 
+\end_layout
+
+\begin_layout Itemize
+Linux ofrece métodos o archivos para la lectura de datos respecto al hardware
+ como el uso del CPU y memoria.
+\end_layout
+
+\begin_layout Itemize
+Systemd ofrece una mejor manera de configurar un demonio como un servicio
+ y con menor código que System V.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+\color black
+Recomendaciones
+\end_layout
+
+\begin_layout Itemize
+Se debe buscar que para el manejo de cadenas de texto el código sea lo más
+ reutilizable posible, si esto no se hace el código se vuelve complejo.
+\end_layout
+
+\begin_layout Itemize
+Utilizar demonios para procesos que no requieran interacción con el usuario.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+\color black
+Referencias
+\end_layout
+
+\begin_layout Standard
+[1] 2016.
+ [Online].
+ Available: http://cjh.polyplex.org/software/daemon.pdf.
+ [Accessed: 15- Aug- 2016].
+\end_layout
+
+\begin_layout Standard
+[2]"Daemon Definition", Linfo.org, 2005.
+ [Online].
+ Available: http://www.linfo.org/daemon.html.
+\end_layout
+
+\begin_layout Standard
+[Accessed: 15- Aug- 2016].
+\end_layout
+
+\begin_layout Standard
+[3]"Unix Programming Frequently Asked Questions - 1.
+ Process Control", Web.archive.org.
+\end_layout
+
+\begin_layout Standard
+[Online].Available:http://web.archive.org/web/20120914180018/http://www.steve.org.uk/R
+eference/Unix
+\end_layout
+
+\begin_layout Standard
+/faq_2.html#SEC16.
+ [Accessed: 15- Aug- 2016].
+\end_layout
+
+\begin_layout Standard
+[4] A.
+ Verma, Unix and shell programming.
+ Bangalore: Firewall Media/Laxmi Publications Pvt.
+ Ltd., 2008.
+\end_layout
+
+\begin_layout Standard
+[5]"How To Configure a Linux Service to Start Automatically After a Crash
+ or Reboot – Part 2: Reference | DigitalOcean", Digitalocean.com, 2015.
+ [Online].
+ Available: https://www.digitalocean.com/community/tutorials/how-to-configure-a-li
+nux-service-to-start-automatically-after-a-crash-or-reboot-part-2-reference.
+ [Accessed: 15- Aug- 2016].
+\end_layout
+
+\begin_layout Standard
+[6]"Linux – El sistema de inicio Systemd – mundotelematico.com", Mundotelematico.c
+om, 2015.
+ [Online].
+ Available: http://www.mundotelematico.com/?p=461.
+ [Accessed: 15- Aug- 2016].
+\end_layout
+
+\end_body
+\end_document

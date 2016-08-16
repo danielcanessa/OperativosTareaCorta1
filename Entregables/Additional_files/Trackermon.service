@@ -1,0 +1,11 @@
+[Unit]
+Description=Trackermon daemon
+After= graphical.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/TrackerMon 
+User=root
+
+[Install]
+WantedBy=graphical.target

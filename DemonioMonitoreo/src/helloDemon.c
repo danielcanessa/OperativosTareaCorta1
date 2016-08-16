@@ -71,7 +71,7 @@ static void skeleton_daemon()
 int main()
 {
     skeleton_daemon();
-   // int counter=0;
+  
 	
     while (1)
     {

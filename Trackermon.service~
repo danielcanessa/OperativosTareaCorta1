@@ -3,8 +3,8 @@ Description=Trackermon daemon
 After= graphical.target
 
 [Service]
-Type=forking
-ExecStart=/usr/bin/TrackerMon 
+Type=simple
+ExecStart=/usr/bin/daemon 
 User=root
 
 [Install]

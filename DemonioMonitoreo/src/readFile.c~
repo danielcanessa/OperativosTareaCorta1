@@ -141,7 +141,8 @@ struct ConfigFile getConfigFileInfo()
 	fclose(ptr_file);
 	
 	
-	return configFile;	
+	return configFile;
+	//free(LogFileResult);
 }
 
 /*
